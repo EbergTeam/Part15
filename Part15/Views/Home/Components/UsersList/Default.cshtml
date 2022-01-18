@@ -1,0 +1,8 @@
+﻿@model IEnumerable<string>
+<h4>Список пользователей</h4>
+<ul>
+    @foreach (var user in Model)
+    {
+        <li>@user</li>
+    }
+</ul>

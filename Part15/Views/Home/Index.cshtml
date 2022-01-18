@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@*View Component состоит из двух частей: класса на C# и частичного представления, которое вызывает методы этого класса.*@
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+@*использование компонента*@
+@await Component.InvokeAsync("Today")
+@await Component.InvokeAsync("Time")
+@await Component.InvokeAsync("TimeBold")
+<br>
+@*Для передачи значений параметрам метода Invoke/InvokeAsync в методе Component.InvokeAsync() в качестве
+    второго аргумента указывается анонимный объект, который устанавливает значения всех параметров*@
+@await Component.InvokeAsync("GetSeconds", new { delay = 2 })
+@await Component.InvokeAsync("Header")
